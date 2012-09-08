@@ -2,5 +2,100 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Stage1-Events</name>
-    <events />
+    <events>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On click" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="droid">
+                    <param id="0" name="Animation">&quot;moveleft&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Platform" id="8" name="Set vector X" type="droid">
+                    <param id="0" name="Vector X">-800</param>
+                </action>
+                <action behavior="Platform" id="3" name="Set deceleration" type="droid">
+                    <param id="0" name="Deceleration">0</param>
+                </action>
+                <action behavior="Platform" id="7" name="Simulate control" type="droid">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="3" name="On button released" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="3" name="Set deceleration" type="droid">
+                    <param id="0" name="Deceleration">800</param>
+                </action>
+                <action id="4" name="Set animation" type="droid">
+                    <param id="0" name="Animation">&quot;brakeleft&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On click" type="Mouse">
+                    <param id="0" name="Mouse button">2</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="droid">
+                    <param id="0" name="Animation">&quot;moveright&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Platform" id="8" name="Set vector X" type="droid">
+                    <param id="0" name="Vector X">800</param>
+                </action>
+                <action behavior="Platform" id="3" name="Set deceleration" type="droid">
+                    <param id="0" name="Deceleration">0</param>
+                </action>
+                <action behavior="Platform" id="7" name="Simulate control" type="droid">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="3" name="On button released" type="Mouse">
+                    <param id="0" name="Mouse button">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="3" name="Set deceleration" type="droid">
+                    <param id="0" name="Deceleration">800</param>
+                </action>
+                <action id="4" name="Set animation" type="droid">
+                    <param id="0" name="Animation">&quot;brakeright&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On key pressed" type="Keyboard">
+                    <param id="0" name="Key">27 (Esc)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" type="System" />
+            </actions>
+        </event-block>
+    </events>
 </c2eventsheet>

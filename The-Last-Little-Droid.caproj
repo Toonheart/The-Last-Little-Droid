@@ -7,9 +7,14 @@
     <unique-id>27i3rv8wgpwd5</unique-id>
     <saved-with-version>9500</saved-with-version>
     <used-plugins>
-        <plugin id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin id="Keyboard" version="1">Keyboard</plugin>
+        <plugin id="Mouse" version="1">Mouse</plugin>
+        <plugin id="Sprite" version="1">Sprite</plugin>
     </used-plugins>
-    <used-behaviors />
+    <used-behaviors>
+        <behavior id="Platform" version="1">Platform</behavior>
+        <behavior id="bound" version="1">Bound to layout</behavior>
+    </used-behaviors>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -18,6 +23,7 @@
         <height>1536</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
+    <first-layout>Stage1</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">No</prop>
@@ -30,9 +36,118 @@
         <prop name="Use iOS retina display">Yes</prop>
     </configuration-settings>
     <object-folder expanded="1">
-        <object-type name="TiledBackground">
-            <plugin id="TiledBg" />
-            <texture />
+        <object-type name="Keyboard">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Mouse">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="droid">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="BoundToLayout">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="Platform">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0.501193" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.21241" y="0.136923" />
+                            <point x="0.498807" y="0.0230769" />
+                            <point x="0.75895" y="0.155385" />
+                            <point x="0.72315" y="0.5" />
+                            <point x="0.553699" y="0.712308" />
+                            <point x="0.498807" y="0.989231" />
+                            <point x="0.422434" y="0.727692" />
+                            <point x="0.207637" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="moveleft" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0.501176" hotspotY="0.500782">
+                        <collision-poly>
+                            <point x="0.181176" y="0.120501" />
+                            <point x="0.498824" y="0.0892019" />
+                            <point x="0.665882" y="0.222222" />
+                            <point x="0.687059" y="0.499218" />
+                            <point x="0.898823" y="0.932707" />
+                            <point x="0.498824" y="0.763693" />
+                            <point x="0.392941" y="0.738654" />
+                            <point x="0.0141176" y="0.499218" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="moveright" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0.501176" hotspotY="0.500782">
+                        <collision-poly>
+                            <point x="0.334118" y="0.222222" />
+                            <point x="0.498824" y="0.0892019" />
+                            <point x="0.818824" y="0.120501" />
+                            <point x="0.985882" y="0.499218" />
+                            <point x="0.607059" y="0.738654" />
+                            <point x="0.498824" y="0.763693" />
+                            <point x="0.101176" y="0.932707" />
+                            <point x="0.312941" y="0.499218" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="brakeleft" pingpong="0" repeatcount="1" repeatto="0" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500752">
+                        <collision-poly>
+                            <point x="0.266667" y="0.144361" />
+                            <point x="0.5" y="0.0827068" />
+                            <point x="0.769444" y="0.124812" />
+                            <point x="0.761111" y="0.499248" />
+                            <point x="0.480556" y="0.718797" />
+                            <point x="0.5" y="0.992481" />
+                            <point x="0.0472222" y="0.974436" />
+                            <point x="0.0944444" y="0.499248" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.21241" y="0.136923" />
+                            <point x="0.498807" y="0.0230769" />
+                            <point x="0.75895" y="0.155385" />
+                            <point x="0.72315" y="0.5" />
+                            <point x="0.553699" y="0.712308" />
+                            <point x="0.498807" y="0.989231" />
+                            <point x="0.422434" y="0.727692" />
+                            <point x="0.207637" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="brakeright" pingpong="0" repeatcount="1" repeatto="0" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500752">
+                        <collision-poly>
+                            <point x="0.230556" y="0.124812" />
+                            <point x="0.5" y="0.081203" />
+                            <point x="0.733333" y="0.144361" />
+                            <point x="0.905556" y="0.499248" />
+                            <point x="0.952778" y="0.974436" />
+                            <point x="0.5" y="0.992481" />
+                            <point x="0.519444" y="0.718797" />
+                            <point x="0.238889" y="0.499248" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.21241" y="0.136923" />
+                            <point x="0.498807" y="0.0230769" />
+                            <point x="0.75895" y="0.155385" />
+                            <point x="0.72315" y="0.5" />
+                            <point x="0.553699" y="0.712308" />
+                            <point x="0.498807" y="0.989231" />
+                            <point x="0.422434" y="0.727692" />
+                            <point x="0.207637" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
@@ -48,7 +163,10 @@
         <event-sheet>Stages-Events.xml</event-sheet>
         <event-sheet>Stage1-Events.xml</event-sheet>
     </event-folder>
-    <global-instances />
+    <global-instances>
+        <global-instance type="Keyboard" />
+        <global-instance type="Mouse" />
+    </global-instances>
     <sounds-folder expanded="1" />
     <music-folder expanded="1" />
     <files-folder expanded="1" />
