@@ -3,17 +3,37 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Stage1-Events</name>
     <events>
+        <event-group description="" title="System">
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-2" name="On start of layout" type="System" />
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" title="UserControl">
+            <sub-events>
+                <event-block>
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-block>
-            <conditions>
-                <condition id="-2" name="On start of layout" type="System" />
-            </conditions>
+            <conditions />
             <actions />
         </event-block>
         <event-block>
             <conditions>
-                <condition id="0" name="On click" type="Mouse">
+                <condition disabled="1" id="6" name="On object clicked" type="Mouse">
                     <param id="0" name="Mouse button">0</param>
                     <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">leftcontrol</param>
+                </condition>
+                <condition id="2" name="Key is down" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
                 </condition>
             </conditions>
             <actions>
@@ -34,25 +54,34 @@
         </event-block>
         <event-block>
             <conditions>
-                <condition id="3" name="On button released" type="Mouse">
+                <condition id="6" name="On object clicked" type="Mouse">
                     <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">rightcontrol</param>
+                </condition>
+                <condition id="2" name="Is playing" type="droid">
+                    <param id="0" name="Animation">&quot;moveleft&quot;</param>
                 </condition>
             </conditions>
             <actions>
-                <action behavior="Platform" id="3" name="Set deceleration" type="droid">
-                    <param id="0" name="Deceleration">800</param>
-                </action>
                 <action id="4" name="Set animation" type="droid">
                     <param id="0" name="Animation">&quot;brakeleft&quot;</param>
                     <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Platform" id="3" name="Set deceleration" type="droid">
+                    <param id="0" name="Deceleration">800</param>
                 </action>
             </actions>
         </event-block>
         <event-block>
             <conditions>
-                <condition id="0" name="On click" type="Mouse">
-                    <param id="0" name="Mouse button">2</param>
+                <condition disabled="1" id="6" name="On object clicked" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
                     <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">rightcontrol</param>
+                </condition>
+                <condition id="2" name="Key is down" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
                 </condition>
             </conditions>
             <actions>
@@ -73,8 +102,104 @@
         </event-block>
         <event-block>
             <conditions>
-                <condition id="3" name="On button released" type="Mouse">
-                    <param id="0" name="Mouse button">2</param>
+                <condition id="6" name="On object clicked" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">leftcontrol</param>
+                </condition>
+                <condition id="2" name="Is playing" type="droid">
+                    <param id="0" name="Animation">&quot;moveright&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="droid">
+                    <param id="0" name="Animation">&quot;brakeright&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Platform" id="3" name="Set deceleration" type="droid">
+                    <param id="0" name="Deceleration">800</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition disabled="1" id="6" name="On object clicked" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">1</param>
+                    <param id="2" name="Object clicked">leftcontrol</param>
+                </condition>
+                <condition id="2" name="Key is down" type="Keyboard">
+                    <param id="0" name="Key">38 (Up arrow)</param>
+                </condition>
+                <condition id="2" name="Is playing" type="droid">
+                    <param id="0" name="Animation">&quot;moveleft&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" type="droid">
+                    <param id="0" name="Control">2</param>
+                </action>
+                <action id="4" name="Set animation" type="droid">
+                    <param id="0" name="Animation">&quot;jumpleft&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition disabled="1" id="6" name="On object clicked" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">1</param>
+                    <param id="2" name="Object clicked">rightcontrol</param>
+                </condition>
+                <condition id="2" name="Key is down" type="Keyboard">
+                    <param id="0" name="Key">38 (Up arrow)</param>
+                </condition>
+                <condition id="2" name="Is playing" type="droid">
+                    <param id="0" name="Animation">&quot;moveright&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" type="droid">
+                    <param id="0" name="Control">2</param>
+                </action>
+                <action id="4" name="Set animation" type="droid">
+                    <param id="0" name="Animation">&quot;jumpright&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="droid">
+                    <param id="0" name="Object">shortleftwall</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="3" name="Set deceleration" type="droid">
+                    <param id="0" name="Deceleration">800</param>
+                </action>
+                <action id="4" name="Set animation" type="droid">
+                    <param id="0" name="Animation">&quot;brakeleft&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="4" name="Set animation" type="droid">
+                    <param id="0" name="Animation">&quot;idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="droid">
+                    <param id="0" name="Object">shortrightwall</param>
                 </condition>
             </conditions>
             <actions>
@@ -83,6 +208,29 @@
                 </action>
                 <action id="4" name="Set animation" type="droid">
                     <param id="0" name="Animation">&quot;brakeright&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="4" name="Set animation" type="droid">
+                    <param id="0" name="Animation">&quot;idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On key pressed" type="Keyboard">
+                    <param id="0" name="Key">40 (Down arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="3" name="Set deceleration" type="droid">
+                    <param id="0" name="Deceleration">800</param>
+                </action>
+                <action id="4" name="Set animation" type="droid">
+                    <param id="0" name="Animation">&quot;idle&quot;</param>
                     <param id="1" name="From">1</param>
                 </action>
             </actions>

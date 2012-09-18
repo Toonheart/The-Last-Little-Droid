@@ -23,7 +23,10 @@
             <zoom-rate>1</zoom-rate>
             <opacity>1</opacity>
             <force-own-texture>0</force-own-texture>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
             <instances />
+            <effects />
         </layer>
         <layer name="Scroll">
             <initially-visible>1</initially-visible>
@@ -36,7 +39,10 @@
             <zoom-rate>1</zoom-rate>
             <opacity>1</opacity>
             <force-own-texture>0</force-own-texture>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
             <instances />
+            <effects />
         </layer>
         <layer name="Objects">
             <initially-visible>1</initially-visible>
@@ -49,7 +55,10 @@
             <zoom-rate>1</zoom-rate>
             <opacity>1</opacity>
             <force-own-texture>0</force-own-texture>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
             <instances />
+            <effects />
         </layer>
         <layer name="GUI">
             <initially-visible>1</initially-visible>
@@ -62,8 +71,12 @@
             <zoom-rate>1</zoom-rate>
             <opacity>1</opacity>
             <force-own-texture>0</force-own-texture>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
             <instances />
+            <effects />
         </layer>
     </layers>
     <nonworld-instances />
+    <effects />
 </c2layout>
