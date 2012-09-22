@@ -177,11 +177,11 @@
                         <x>660</x>
                         <y>1228</y>
                         <z>0</z>
-                        <width>311</width>
-                        <height>45</height>
+                        <width>317.220001221</width>
+                        <height>45.900001526</height>
                         <depth>0</depth>
-                        <hotspotX>0.469999999</hotspotX>
-                        <hotspotY>0.02</hotspotY>
+                        <hotspotX>0.470588237</hotspotX>
+                        <hotspotY>0.029411765</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -200,11 +200,11 @@
                         <x>1099</x>
                         <y>1152</y>
                         <z>0</z>
-                        <width>283</width>
-                        <height>50</height>
+                        <width>288.660003662</width>
+                        <height>51</height>
                         <depth>0</depth>
-                        <hotspotX>0.449999988</hotspotX>
-                        <hotspotY>-0.02</hotspotY>
+                        <hotspotX>0.450980395</hotspotX>
+                        <hotspotY>-0.009803922</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -258,11 +258,45 @@
                         <x>1504</x>
                         <y>1098</y>
                         <z>0</z>
-                        <width>282</width>
-                        <height>39</height>
+                        <width>287.640014648</width>
+                        <height>39.779998779</height>
                         <depth>0</depth>
-                        <hotspotX>0.469999999</hotspotX>
-                        <hotspotY>-0.01</hotspotY>
+                        <hotspotX>0.470588237</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="droidbox">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-frame>0</initial-frame>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Platform">
+                            <properties>
+                                <max-speed>330</max-speed>
+                                <acceleration>1500</acceleration>
+                                <deceleration>1500</deceleration>
+                                <jump-strength>650</jump-strength>
+                                <gravity>1500</gravity>
+                                <max-fall-speed>1000</max-fall-speed>
+                                <default-controls>Yes</default-controls>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="ScrollTo" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>258.13885498</x>
+                        <y>1271</y>
+                        <z>0</z>
+                        <width>216</width>
+                        <height>349</height>
+                        <depth>0</depth>
+                        <hotspotX>0.527777791</hotspotX>
+                        <hotspotY>1</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

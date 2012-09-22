@@ -3,208 +3,84 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Stage1-Events</name>
     <events>
-        <variable comment="Global Force variable " name="force" type="number">5000000</variable>
         <event-group description="" title="System">
             <sub-events>
-                <event-block>
-                    <conditions>
-                        <condition id="-2" name="On start of layout" type="System" />
-                    </conditions>
-                    <actions />
-                </event-block>
                 <event-block>
                     <conditions>
                         <condition id="-1" name="Every tick" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" type="droid">
-                            <param id="0" name="Instance variable">fx</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-10" name="Set value" type="droid">
-                            <param id="0" name="Instance variable">fy</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action behavior="Platform" id="8" name="Set vector X" type="droid">
-                            <param id="0" name="Vector X">self.Platform.VectorX+self.fx*dt</param>
-                        </action>
-                        <action behavior="Platform" id="9" name="Set vector Y" type="droid">
-                            <param id="0" name="Vector Y">self.Platform.VectorX+self.fx*dt</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block>
-                    <conditions>
-                        <condition id="-11" name="For Each" type="System">
-                            <param id="0" name="Object">stage1portal1</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block>
-                            <conditions>
-                                <condition id="3" name="Compare frame" type="stage1portal1">
-                                    <param id="0" name="Comparison">1</param>
-                                    <param id="1" name="Number">droid.AnimationFrame</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" type="System">
-                                    <param id="0" name="Variable">force</param>
-                                    <param id="1" name="Value">abs(force)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block>
-                            <conditions>
-                                <condition id="3" name="Compare frame" type="stage1portal1">
-                                    <param id="0" name="Comparison">0</param>
-                                    <param id="1" name="Number">droid.AnimationFrame</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" type="System">
-                                    <param id="0" name="Variable">force</param>
-                                    <param id="1" name="Value">-abs(force)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block>
-                    <conditions />
-                    <actions>
-                        <action id="-11" name="Add to" type="droid">
-                            <param id="0" name="Instance variable">fx</param>
-                            <param id="1" name="Value">cos(angle(self.X,self.Y, stage1portal1.X, stage1portal1.Y))*force/distance(self.X,self.Y, stage1portal1.X, stage1portal1.Y)^2</param>
-                        </action>
-                        <action id="-11" name="Add to" type="droid">
-                            <param id="0" name="Instance variable">fy</param>
-                            <param id="1" name="Value">sin(angle(self.X,self.Y, stage1portal1.X, stage1portal1.Y))*force/distance(self.X,self.Y, stage1portal1.X, stage1portal1.Y)^2</param>
+                        <action id="-4" name="Set position to another object" type="droid">
+                            <param id="0" name="Object">droidbox</param>
+                            <param id="1" name="Image point (optional)">0</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" title="UserControl" />
+        <event-group description="" title="UserControl">
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition behavior="Platform" id="8" name="On moved" type="droidbox" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" type="droid">
+                            <param id="0" name="Animation">&quot;moveleft&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition behavior="Platform" id="7" name="On stopped" type="droidbox" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" type="droid">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-block>
             <conditions>
-                <condition disabled="1" id="6" name="On object clicked" type="Mouse">
-                    <param id="0" name="Mouse button">0</param>
-                    <param id="1" name="Click type">0</param>
-                    <param id="2" name="Object clicked">leftcontrol</param>
+                <condition id="2" name="Key is down" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="droid">
+                    <param id="0" name="Animation">&quot;moveleft&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="2" name="Key is down" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="droid">
+                    <param id="0" name="Animation">&quot;moveright&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition behavior="Platform" id="5" name="On jump" type="droidbox" />
+                <condition id="2" name="Is playing" type="droid">
+                    <param id="0" name="Animation">&quot;moveleft&quot;</param>
                 </condition>
                 <condition id="2" name="Key is down" type="Keyboard">
                     <param id="0" name="Key">37 (Left arrow)</param>
                 </condition>
             </conditions>
             <actions>
-                <action behavior="Platform" disabled="1" id="8" name="Set vector X" type="droid">
-                    <param id="0" name="Vector X">-800</param>
-                </action>
-                <action behavior="Platform" disabled="1" id="3" name="Set deceleration" type="droid">
-                    <param id="0" name="Deceleration">0</param>
-                </action>
-                <action behavior="Platform" id="7" name="Simulate control" type="droid">
-                    <param id="0" name="Control">0</param>
-                </action>
-                <action id="4" name="Set animation" type="droid">
-                    <param id="0" name="Animation">&quot;moveleft&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block>
-            <conditions>
-                <condition id="6" name="On object clicked" type="Mouse">
-                    <param id="0" name="Mouse button">0</param>
-                    <param id="1" name="Click type">0</param>
-                    <param id="2" name="Object clicked">rightcontrol</param>
-                </condition>
-                <condition id="2" name="Is playing" type="droid">
-                    <param id="0" name="Animation">&quot;moveleft&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" type="droid">
-                    <param id="0" name="Animation">&quot;brakeleft&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action behavior="Platform" id="3" name="Set deceleration" type="droid">
-                    <param id="0" name="Deceleration">800</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block>
-            <conditions>
-                <condition disabled="1" id="6" name="On object clicked" type="Mouse">
-                    <param id="0" name="Mouse button">0</param>
-                    <param id="1" name="Click type">0</param>
-                    <param id="2" name="Object clicked">rightcontrol</param>
-                </condition>
-                <condition id="2" name="Key is down" type="Keyboard">
-                    <param id="0" name="Key">39 (Right arrow)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Platform" disabled="1" id="8" name="Set vector X" type="droid">
-                    <param id="0" name="Vector X">800</param>
-                </action>
-                <action behavior="Platform" disabled="1" id="3" name="Set deceleration" type="droid">
-                    <param id="0" name="Deceleration">0</param>
-                </action>
-                <action behavior="Platform" id="7" name="Simulate control" type="droid">
-                    <param id="0" name="Control">1</param>
-                </action>
-                <action id="4" name="Set animation" type="droid">
-                    <param id="0" name="Animation">&quot;moveright&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block>
-            <conditions>
-                <condition id="6" name="On object clicked" type="Mouse">
-                    <param id="0" name="Mouse button">0</param>
-                    <param id="1" name="Click type">0</param>
-                    <param id="2" name="Object clicked">leftcontrol</param>
-                </condition>
-                <condition id="2" name="Is playing" type="droid">
-                    <param id="0" name="Animation">&quot;moveright&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" type="droid">
-                    <param id="0" name="Animation">&quot;brakeright&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action behavior="Platform" id="3" name="Set deceleration" type="droid">
-                    <param id="0" name="Deceleration">800</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block>
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block>
-            <conditions>
-                <condition disabled="1" id="6" name="On object clicked" type="Mouse">
-                    <param id="0" name="Mouse button">0</param>
-                    <param id="1" name="Click type">1</param>
-                    <param id="2" name="Object clicked">leftcontrol</param>
-                </condition>
-                <condition id="2" name="Key is down" type="Keyboard">
-                    <param id="0" name="Key">38 (Up arrow)</param>
-                </condition>
-                <condition id="2" name="Is playing" type="droid">
-                    <param id="0" name="Animation">&quot;moveleft&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="7" name="Simulate control" type="droid">
-                    <param id="0" name="Control">2</param>
-                </action>
                 <action id="4" name="Set animation" type="droid">
                     <param id="0" name="Animation">&quot;jumpleft&quot;</param>
                     <param id="1" name="From">1</param>
@@ -213,27 +89,28 @@
         </event-block>
         <event-block>
             <conditions>
-                <condition disabled="1" id="6" name="On object clicked" type="Mouse">
-                    <param id="0" name="Mouse button">0</param>
-                    <param id="1" name="Click type">1</param>
-                    <param id="2" name="Object clicked">rightcontrol</param>
-                </condition>
-                <condition id="2" name="Key is down" type="Keyboard">
-                    <param id="0" name="Key">38 (Up arrow)</param>
-                </condition>
+                <condition behavior="Platform" id="5" name="On jump" type="droidbox" />
                 <condition id="2" name="Is playing" type="droid">
                     <param id="0" name="Animation">&quot;moveright&quot;</param>
                 </condition>
+                <condition id="2" name="Key is down" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
             </conditions>
             <actions>
-                <action behavior="Platform" id="7" name="Simulate control" type="droid">
-                    <param id="0" name="Control">2</param>
-                </action>
                 <action id="4" name="Set animation" type="droid">
                     <param id="0" name="Animation">&quot;jumpright&quot;</param>
                     <param id="1" name="From">1</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block>
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block>
+            <conditions />
+            <actions />
         </event-block>
         <event-block>
             <conditions>
@@ -274,22 +151,6 @@
                 </action>
                 <action id="-16" name="Wait" type="System">
                     <param id="0" name="Seconds">0.2</param>
-                </action>
-                <action id="4" name="Set animation" type="droid">
-                    <param id="0" name="Animation">&quot;idle&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block>
-            <conditions>
-                <condition id="0" name="On key pressed" type="Keyboard">
-                    <param id="0" name="Key">40 (Down arrow)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="3" name="Set deceleration" type="droid">
-                    <param id="0" name="Deceleration">800</param>
                 </action>
                 <action id="4" name="Set animation" type="droid">
                     <param id="0" name="Animation">&quot;idle&quot;</param>
