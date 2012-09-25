@@ -58,48 +58,6 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="droid">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-frame>0</initial-frame>
-                    </properties>
-                    <instance-variables>
-                        <fx>0</fx>
-                        <fy>0</fy>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="BoundToLayout">
-                            <properties>
-                                <bound-by>Edge</bound-by>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="Platform">
-                            <properties>
-                                <max-speed>330</max-speed>
-                                <acceleration>1500</acceleration>
-                                <deceleration>1500</deceleration>
-                                <jump-strength>650</jump-strength>
-                                <gravity>1500</gravity>
-                                <max-fall-speed>1000</max-fall-speed>
-                                <default-controls>Yes</default-controls>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>244</x>
-                        <y>1273</y>
-                        <z>0</z>
-                        <width>230.944747925</width>
-                        <height>358.26751709</height>
-                        <depth>0</depth>
-                        <hotspotX>0.467780441</hotspotX>
-                        <hotspotY>0.995384634</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="shortleftwall">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -151,10 +109,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1017</x>
-                        <y>1358</y>
+                        <x>1031.832763672</x>
+                        <y>1477</y>
                         <z>0</z>
-                        <width>2035</width>
+                        <width>2187</width>
                         <height>147</height>
                         <depth>0</depth>
                         <hotspotX>0.497500002</hotspotX>
@@ -174,8 +132,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>660</x>
-                        <y>1228</y>
+                        <x>621</x>
+                        <y>1319</y>
                         <z>0</z>
                         <width>317.220001221</width>
                         <height>45.900001526</height>
@@ -197,8 +155,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1099</x>
-                        <y>1152</y>
+                        <x>1063</x>
+                        <y>1246</y>
                         <z>0</z>
                         <width>288.660003662</width>
                         <height>51</height>
@@ -232,8 +190,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1839</x>
-                        <y>952</y>
+                        <x>1865</x>
+                        <y>233</y>
                         <z>0</z>
                         <width>318</width>
                         <height>444</height>
@@ -255,8 +213,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1504</x>
-                        <y>1098</y>
+                        <x>1462</x>
+                        <y>1198</y>
                         <z>0</z>
                         <width>287.640014648</width>
                         <height>39.779998779</height>
@@ -275,12 +233,12 @@
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
-                                <acceleration>1500</acceleration>
+                                <max-speed>600</max-speed>
+                                <acceleration>2000</acceleration>
                                 <deceleration>1500</deceleration>
-                                <jump-strength>650</jump-strength>
-                                <gravity>1500</gravity>
-                                <max-fall-speed>1000</max-fall-speed>
+                                <jump-strength>750</jump-strength>
+                                <gravity>1800</gravity>
+                                <max-fall-speed>1500</max-fall-speed>
                                 <default-controls>Yes</default-controls>
                             </properties>
                         </behavior-instance>
@@ -289,14 +247,45 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>258.13885498</x>
-                        <y>1271</y>
+                        <x>220.113098145</x>
+                        <y>1478.674804688</y>
                         <z>0</z>
-                        <width>216</width>
-                        <height>349</height>
+                        <width>18.289916992</width>
+                        <height>251.674804688</height>
                         <depth>0</depth>
                         <hotspotX>0.527777791</hotspotX>
                         <hotspotY>1</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="droid">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-frame>0</initial-frame>
+                    </properties>
+                    <instance-variables>
+                        <fx>0</fx>
+                        <fy>0</fy>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="BoundToLayout">
+                            <properties>
+                                <bound-by>Edge</bound-by>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>221.488464355</x>
+                        <y>1479.437255859</y>
+                        <z>0</z>
+                        <width>169.901519775</width>
+                        <height>263.570373535</height>
+                        <depth>0</depth>
+                        <hotspotX>0.467780441</hotspotX>
+                        <hotspotY>0.995384634</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
