@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Stage1-Events</name>
     <events>
+        <variable comment="This value moves the movable blocks in X and Y axis" name="movingblocks_direction" type="number">1</variable>
         <event-group description="" title="System">
             <sub-events>
                 <event-block>
@@ -13,6 +14,32 @@
                         <action id="-4" name="Set position to another object" type="droid">
                             <param id="0" name="Object">droidbox</param>
                             <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-1" name="Every tick" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" type="stage1yblock1">
+                            <param id="0" name="Y">self.Y+movingblocks_direction</param>
+                        </action>
+                        <action id="-1" name="Set X" type="stage1xblock1">
+                            <param id="0" name="X">self.X+movingblocks_direction</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" type="System">
+                            <param id="0" name="Interval (seconds)">6.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">movingblocks_direction</param>
+                            <param id="1" name="Value">-(movingblocks_direction)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -173,10 +200,12 @@
                     <param id="0" name="Animation">&quot;idle&quot;</param>
                     <param id="1" name="From">1</param>
                 </action>
-                <action id="-16" name="Set opacity" type="droid">
-                    <param id="0" name="Opacity">30</param>
-                </action>
+                <action id="-9" name="Destroy" type="droid" />
             </actions>
+        </event-block>
+        <event-block>
+            <conditions />
+            <actions />
         </event-block>
     </events>
 </c2eventsheet>

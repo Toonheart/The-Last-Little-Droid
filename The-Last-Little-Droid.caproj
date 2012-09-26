@@ -281,6 +281,11 @@
         </object-type>
         <object-type name="shortleftwall">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -289,6 +294,11 @@
         </object-type>
         <object-type name="shortrightwall">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -298,8 +308,8 @@
         <object-type name="stage1ground">
             <plugin id="Sprite" />
             <behaviors>
-                <behavior-type name="Solid">
-                    <behavior id="solid" />
+                <behavior-type name="Jumpthru">
+                    <behavior id="jumpthru" />
                 </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
@@ -318,7 +328,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="stage1block1">
+        <object-type name="stage1yblock1">
             <plugin id="Sprite" />
             <behaviors>
                 <behavior-type name="Jumpthru">
@@ -331,7 +341,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="stage1block2">
+        <object-type name="stage1xblock1">
             <plugin id="Sprite" />
             <behaviors>
                 <behavior-type name="Jumpthru">
@@ -344,7 +354,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="stage1block3">
+        <object-type name="stage1fixedblock1">
             <plugin id="Sprite" />
             <behaviors>
                 <behavior-type name="Jumpthru">
@@ -390,10 +400,29 @@
                 <behavior-type name="ScrollTo">
                     <behavior id="scrollto" />
                 </behavior-type>
+                <behavior-type name="BoundToLayout">
+                    <behavior id="bound" />
+                </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                     <frame duration="1" hotspotX="0.527778" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="stage1block4">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="This moves stage1block1" name="stage1block1_dx" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Jumpthru">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0.470588" hotspotY="0.0294118" />
                 </animation>
             </animation-folder>
         </object-type>
