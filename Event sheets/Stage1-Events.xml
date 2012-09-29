@@ -3,9 +3,27 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Stage1-Events</name>
     <events>
+        <comment>Global Variables - Don&apos;t mess with them!</comment>
         <variable comment="This value moves the movable blocks in X and Y axis" name="movingblocks_direction" type="number">1</variable>
+        <comment>Includes</comment>
+        <include>Fades in-out</include>
         <event-group description="" title="System">
             <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-2" name="On start of layout" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" type="System">
+                            <param id="0" name="Group name">&quot;Fade In&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>*** ATTENTION: Move this event&apos;s actions to the previous event after you test it (it&apos;s not like the device resolution is going to change...) ***</comment>
                 <event-block>
                     <conditions>
                         <condition id="-1" name="Every tick" type="System" />
@@ -45,7 +63,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" title="UserControl">
+        <event-group collapsed="1" description="" title="UserControl">
             <sub-events>
                 <event-block>
                     <conditions>
@@ -205,6 +223,15 @@
         </event-block>
         <event-block>
             <conditions />
+            <actions />
+        </event-block>
+        <event-group description="All debug stuff here." title="Debug" />
+        <event-block>
+            <conditions>
+                <condition disabled="1" id="-6" name="Every X seconds" type="System">
+                    <param id="0" name="Interval (seconds)">3.0</param>
+                </condition>
+            </conditions>
             <actions />
         </event-block>
     </events>
