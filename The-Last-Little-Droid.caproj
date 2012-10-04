@@ -131,7 +131,7 @@
                         </collision-poly>
                     </frame>
                 </animation>
-                <animation framecount="5" loop="0" name="jumpleft" pingpong="0" repeatcount="1" repeatto="0" speed="3">
+                <animation framecount="5" loop="0" name="jumpleft" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                     <frame duration="1" hotspotX="0.355353" hotspotY="0.995114">
                         <collision-poly>
                             <point x="0.104784" y="0.0749186" />
@@ -415,54 +415,6 @@
         <object-type name="Touch">
             <plugin id="Touch" />
         </object-type>
-        <object-type name="leftcontrol">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Anchor">
-                    <behavior id="Anchor" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="0.242188" y="0.242188" />
-                            <point x="0.5" y="0.0117188" />
-                            <point x="0.617188" y="0.382813" />
-                            <point x="0.96875" y="0.5" />
-                            <point x="0.605469" y="0.605469" />
-                            <point x="0.5" y="0.980469" />
-                            <point x="0.246094" y="0.753906" />
-                            <point x="0.0351563" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="rightcontrol">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Anchor">
-                    <behavior id="Anchor" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="0.382813" y="0.382813" />
-                            <point x="0.5" y="0.0117188" />
-                            <point x="0.757813" y="0.242188" />
-                            <point x="0.964844" y="0.5" />
-                            <point x="0.753906" y="0.753906" />
-                            <point x="0.5" y="0.976563" />
-                            <point x="0.394531" y="0.605469" />
-                            <point x="0.03125" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="jump">
             <plugin id="Sprite" />
             <behaviors>
@@ -474,14 +426,14 @@
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
-                            <point x="0.175781" y="0.175781" />
-                            <point x="0.5" y="0.0390625" />
-                            <point x="0.824219" y="0.175781" />
-                            <point x="0.964844" y="0.5" />
-                            <point x="0.828125" y="0.828125" />
-                            <point x="0.5" y="0.964844" />
-                            <point x="0.175781" y="0.824219" />
-                            <point x="0.0429688" y="0.5" />
+                            <point x="0.003906" y="0" />
+                            <point x="0.464844" y="0" />
+                            <point x="0.988281" y="0" />
+                            <point x="1" y="0.488281" />
+                            <point x="1" y="1" />
+                            <point x="0.492188" y="1" />
+                            <point x="0.00390625" y="1" />
+                            <point x="0.00390625" y="0.519531" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -508,6 +460,32 @@
                             <point x="0" y="0.5" />
                         </collision-poly>
                     </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="leftcontroltouch">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Anchor">
+                    <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.804688" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="rightcontroltouch">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Anchor">
+                    <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0.484375" hotspotY="0.809896" />
                 </animation>
             </animation-folder>
         </object-type>
