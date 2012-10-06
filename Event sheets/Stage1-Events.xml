@@ -7,7 +7,7 @@
         <variable comment="This value moves the movable blocks in X and Y axis" name="movingblocks_direction" type="number">1</variable>
         <comment>Includes</comment>
         <include>Fades in-out</include>
-        <event-group collapsed="1" description="" title="System">
+        <event-group description="" title="System">
             <sub-events>
                 <event-block>
                     <conditions>
@@ -20,6 +20,9 @@
                         <action id="-12" name="Set group active" type="System">
                             <param id="0" name="Group name">&quot;Fade In&quot;</param>
                             <param id="1" name="State">1</param>
+                        </action>
+                        <action behavior="8Direction" id="8" name="Set enabled" type="droidbox">
+                            <param id="0" name="State">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -61,9 +64,51 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" type="droid">
+                                    <param id="0" name="Instance variable">power_jetpack_time</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" type="droid">
+                                    <param id="0" name="Instance variable">power_jetpack_time</param>
+                                    <param id="1" name="Value">droid.power_jetpack_time-1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" type="droid">
+                                    <param id="0" name="Instance variable">power_jetpack_time</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="8" name="Set enabled" type="droidbox">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" type="droidbox">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" title="UserControl">
+        <event-group description="" title="UserControl">
             <sub-events>
                 <event-block any="1">
                     <conditions>
@@ -115,6 +160,29 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Check if JetPack power is active and if time is left.. then allow 8 direction movement</comment>
+                <event-block>
+                    <conditions>
+                        <condition id="3" name="On touched object" type="Touch">
+                            <param id="0" name="Object">special</param>
+                        </condition>
+                        <condition disabled="1" id="-8" name="Is boolean instance variable set" type="droid">
+                            <param id="0" name="Instance variable">power_jetpack</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" type="droid">
+                            <param id="0" name="Instance variable">power_jetpack_time</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action behavior="8Direction" id="8" name="Set enabled" type="droidbox">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" type="droidbox">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block>
                     <conditions>
                         <condition id="0" name="On key pressed" type="Keyboard">
@@ -124,18 +192,6 @@
                     <actions>
                         <action id="-26" name="Restart layout" type="System" />
                     </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-group collapsed="1" description="All debug stuff here." title="Debug">
-            <sub-events>
-                <event-block>
-                    <conditions>
-                        <condition disabled="1" id="-6" name="Every X seconds" type="System">
-                            <param id="0" name="Interval (seconds)">3.0</param>
-                        </condition>
-                    </conditions>
-                    <actions />
                 </event-block>
             </sub-events>
         </event-group>
@@ -254,7 +310,7 @@
                 <comment>When player picks up Jetpack, change HUD to have Jetpack and toggle jetpack power to true, and set jetpack time.</comment>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Collisions that are useful to Player" title="Useful Collisions">
+        <event-group description="Collisions that are useful to Player" title="Useful Collisions">
             <sub-events>
                 <event-block>
                     <conditions>
@@ -264,7 +320,11 @@
                     </conditions>
                     <actions>
                         <action id="9" name="Set scale" type="jetpack">
-                            <param id="0" name="Scale">1.5</param>
+                            <param id="0" name="Scale">1.25</param>
+                        </action>
+                        <action id="-3" name="Set position" type="jetpack">
+                            <param id="0" name="X">jetpack.X+100</param>
+                            <param id="1" name="Y">jetpack.Y+100</param>
                         </action>
                         <action id="-16" name="Wait" type="System">
                             <param id="0" name="Seconds">0.5</param>
@@ -277,47 +337,28 @@
                         <action id="-14" name="Toggle boolean" type="droid">
                             <param id="0" name="Instance variable">power_jetpack</param>
                         </action>
-                        <action id="-10" name="Set value" type="droid">
-                            <param id="0" name="Instance variable">power_jetpack_time</param>
-                            <param id="1" name="Value">5</param>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="All debug stuff here." title="Debug">
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Update watch variable" type="DebugPanel">
+                            <param id="0" name="Name">&quot;JetPack Enable&quot;</param>
+                            <param id="1" name="Value">droid.power_jetpack</param>
+                        </action>
+                        <action id="3" name="Update watch variable" type="DebugPanel">
+                            <param id="0" name="Name">&quot;Jetpack remaining Time&quot;</param>
+                            <param id="1" name="Value">droid.power_jetpack_time</param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <comment>Check if JetPack power is active and if time is left.. then allow 8 direction movement</comment>
-                        <event-block>
-                            <conditions>
-                                <condition id="-8" name="Is boolean instance variable set" type="droid">
-                                    <param id="0" name="Instance variable">power_jetpack</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" type="droid">
-                                    <param id="0" name="Instance variable">power_jetpack_time</param>
-                                    <param id="1" name="Comparison">1</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block>
-                                    <conditions>
-                                        <condition id="-6" name="Every X seconds" type="System">
-                                            <param id="0" name="Interval (seconds)">1.0</param>
-                                        </condition>
-                                        <condition id="-7" name="Compare instance variable" type="droid">
-                                            <param id="0" name="Instance variable">power_jetpack_time</param>
-                                            <param id="1" name="Comparison">1</param>
-                                            <param id="2" name="Value">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-10" name="Set value" type="droid">
-                                            <param id="0" name="Instance variable">power_jetpack_time</param>
-                                            <param id="1" name="Value">droid.power_jetpack_time-1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

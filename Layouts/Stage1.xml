@@ -300,6 +300,16 @@
                                 <bound-by>Edge</bound-by>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="8Direction">
+                            <properties>
+                                <max-speed>200</max-speed>
+                                <acceleration>600</acceleration>
+                                <deceleration>500</deceleration>
+                                <directions>8 directions</directions>
+                                <set-angle>360 degree (smooth)</set-angle>
+                                <default-controls>Yes</default-controls>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -449,8 +459,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1346</x>
-                        <y>605</y>
+                        <x>589</x>
+                        <y>1449</y>
                         <z>0</z>
                         <width>103.184303284</width>
                         <height>103.184303284</height>
@@ -602,6 +612,15 @@
             <effects />
         </layer>
     </layers>
-    <nonworld-instances />
+    <nonworld-instances>
+        <instance type="DebugPanel">
+            <properties>
+                <enable>Yes</enable>
+                <activated>Yes</activated>
+                <stay-on-top>No</stay-on-top>
+                <log-buffer-length>100</log-buffer-length>
+            </properties>
+        </instance>
+    </nonworld-instances>
     <effects />
 </c2layout>
