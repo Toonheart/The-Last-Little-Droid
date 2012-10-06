@@ -13,13 +13,13 @@
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
-        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
-        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+        <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
+        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -54,6 +54,8 @@
             <instance-variables>
                 <instance-variable comment="force on player in x-axis" name="fx" type="number" />
                 <instance-variable comment="force on player in y-axis" name="fy" type="number" />
+                <instance-variable comment="Variable to determine whether Jetpack is attained or not" name="power_jetpack" type="boolean" />
+                <instance-variable comment="Seconds left for Jetpack to lose fuel." name="power_jetpack_time" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="BoundToLayout">
@@ -450,14 +452,28 @@
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
-                            <point x="0.15625" y="0.15625" />
+                            <point x="0.00390625" y="0.015625" />
                             <point x="0.5" y="0.0078125" />
-                            <point x="0.84375" y="0.15625" />
+                            <point x="0.984375" y="0" />
                             <point x="1" y="0.5" />
-                            <point x="0.804688" y="0.804688" />
+                            <point x="0.988281" y="0.992188" />
                             <point x="0.5" y="0.988281" />
-                            <point x="0.195313" y="0.804688" />
+                            <point x="5.06639e-007" y="0.996094" />
                             <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="powerjetpack" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.005" y="0.01" />
+                            <point x="1" y="0" />
+                            <point x="0.985" y="0.51" />
+                            <point x="1" y="0.725" />
+                            <point x="0.985" y="1" />
+                            <point x="0.5" y="0.99" />
+                            <point x="0" y="1" />
+                            <point x="0.01" y="0.55" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -486,6 +502,25 @@
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                     <frame duration="1" hotspotX="0.484375" hotspotY="0.809896" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="jetpack">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.145" y="1.49012e-008" />
+                            <point x="0.615" y="0.015" />
+                            <point x="0.62" y="0.435" />
+                            <point x="0.92" y="0.73" />
+                            <point x="0.98" y="0.9" />
+                            <point x="0.405" y="1" />
+                            <point x="0.015" y="0.855" />
+                            <point x="0.145" y="0.5" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>

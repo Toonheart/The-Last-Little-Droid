@@ -7,7 +7,7 @@
         <variable comment="This value moves the movable blocks in X and Y axis" name="movingblocks_direction" type="number">1</variable>
         <comment>Includes</comment>
         <include>Fades in-out</include>
-        <event-group description="" title="System">
+        <event-group collapsed="1" description="" title="System">
             <sub-events>
                 <event-block>
                     <conditions>
@@ -63,8 +63,95 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" title="UserControl">
+        <event-group collapsed="1" description="" title="UserControl">
             <sub-events>
+                <event-block any="1">
+                    <conditions>
+                        <condition id="2" name="Key is down" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                        <condition id="4" name="Is touching object" type="Touch">
+                            <param id="0" name="Object">leftcontroltouch</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" type="droid">
+                            <param id="0" name="Animation">&quot;moveleft&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" type="droidbox">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1">
+                    <conditions>
+                        <condition id="2" name="Key is down" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                        <condition id="4" name="Is touching object" type="Touch">
+                            <param id="0" name="Object">rightcontroltouch</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" type="droid">
+                            <param id="0" name="Animation">&quot;moveright&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" type="droidbox">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="4" name="Is touching object" type="Touch">
+                            <param id="0" name="Object">jump</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" type="droidbox">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On key pressed" type="Keyboard">
+                            <param id="0" name="Key">27 (Esc)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="All debug stuff here." title="Debug">
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition disabled="1" id="-6" name="Every X seconds" type="System">
+                            <param id="0" name="Interval (seconds)">3.0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="All platform behaviors go here." title="Platform Behaviors">
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition behavior="Platform" id="7" name="On stopped" type="droidbox" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" type="droid">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block>
                     <conditions>
                         <condition behavior="Platform" id="8" name="On moved" type="droidbox" />
@@ -78,181 +165,161 @@
                 </event-block>
                 <event-block>
                     <conditions>
-                        <condition behavior="Platform" id="7" name="On stopped" type="droidbox" />
+                        <condition behavior="Platform" id="5" name="On jump" type="droidbox" />
+                        <condition id="2" name="Is playing" type="droid">
+                            <param id="0" name="Animation">&quot;moveleft&quot;</param>
+                        </condition>
                     </conditions>
                     <actions>
+                        <action id="2" name="Stop" type="droid" />
                         <action id="4" name="Set animation" type="droid">
-                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="0" name="Animation">&quot;jumpleft&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition behavior="Platform" id="5" name="On jump" type="droidbox" />
+                        <condition id="2" name="Is playing" type="droid">
+                            <param id="0" name="Animation">&quot;moveright&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Stop" type="droid" />
+                        <action id="4" name="Set animation" type="droid">
+                            <param id="0" name="Animation">&quot;jumpright&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block any="1">
-            <conditions>
-                <condition id="2" name="Key is down" type="Keyboard">
-                    <param id="0" name="Key">37 (Left arrow)</param>
-                </condition>
-                <condition id="4" name="Is touching object" type="Touch">
-                    <param id="0" name="Object">leftcontroltouch</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" type="droid">
-                    <param id="0" name="Animation">&quot;moveleft&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action behavior="Platform" id="7" name="Simulate control" type="droidbox">
-                    <param id="0" name="Control">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block any="1">
-            <conditions>
-                <condition id="2" name="Key is down" type="Keyboard">
-                    <param id="0" name="Key">39 (Right arrow)</param>
-                </condition>
-                <condition id="4" name="Is touching object" type="Touch">
-                    <param id="0" name="Object">rightcontroltouch</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" type="droid">
-                    <param id="0" name="Animation">&quot;moveright&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action behavior="Platform" id="7" name="Simulate control" type="droidbox">
-                    <param id="0" name="Control">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block>
-            <conditions>
-                <condition behavior="Platform" id="5" name="On jump" type="droidbox" />
-                <condition id="2" name="Is playing" type="droid">
-                    <param id="0" name="Animation">&quot;moveleft&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="2" name="Stop" type="droid" />
-                <action id="4" name="Set animation" type="droid">
-                    <param id="0" name="Animation">&quot;jumpleft&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block>
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block>
-            <conditions>
-                <condition behavior="Platform" id="5" name="On jump" type="droidbox" />
-                <condition id="2" name="Is playing" type="droid">
-                    <param id="0" name="Animation">&quot;moveright&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="2" name="Stop" type="droid" />
-                <action id="4" name="Set animation" type="droid">
-                    <param id="0" name="Animation">&quot;jumpright&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block>
-            <conditions>
-                <condition id="4" name="Is touching object" type="Touch">
-                    <param id="0" name="Object">jump</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="7" name="Simulate control" type="droidbox">
-                    <param id="0" name="Control">2</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block>
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block>
-            <conditions>
-                <condition id="0" name="On collision with another object" type="droid">
-                    <param id="0" name="Object">shortleftwall</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" type="droid">
-                    <param id="0" name="Animation">&quot;brakeleft&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="-16" name="Wait" type="System">
-                    <param id="0" name="Seconds">0.2</param>
-                </action>
-                <action id="4" name="Set animation" type="droid">
-                    <param id="0" name="Animation">&quot;idle&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block>
-            <conditions>
-                <condition id="0" name="On collision with another object" type="droid">
-                    <param id="0" name="Object">shortrightwall</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" type="droid">
-                    <param id="0" name="Animation">&quot;brakeright&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="-16" name="Wait" type="System">
-                    <param id="0" name="Seconds">0.2</param>
-                </action>
-                <action id="4" name="Set animation" type="droid">
-                    <param id="0" name="Animation">&quot;idle&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block>
-            <conditions>
-                <condition id="0" name="On key pressed" type="Keyboard">
-                    <param id="0" name="Key">27 (Esc)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-26" name="Restart layout" type="System" />
-            </actions>
-        </event-block>
-        <event-block>
-            <conditions>
-                <condition id="0" name="On collision with another object" type="droid">
-                    <param id="0" name="Object">stage1portal1</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" type="droid">
-                    <param id="0" name="Animation">&quot;idle&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="-9" name="Destroy" type="droid" />
-            </actions>
-        </event-block>
-        <event-block>
-            <conditions />
-            <actions />
-        </event-block>
-        <event-group description="All debug stuff here." title="Debug" />
-        <event-block>
-            <conditions>
-                <condition disabled="1" id="-6" name="Every X seconds" type="System">
-                    <param id="0" name="Interval (seconds)">3.0</param>
-                </condition>
-            </conditions>
-            <actions />
-        </event-block>
+        <event-group collapsed="1" description="Collisions that will cause problems to player or change in gameplay" title="Gameplay Collisions">
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On collision with another object" type="droid">
+                            <param id="0" name="Object">stage1portal1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" type="droid">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" type="droid" />
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On collision with another object" type="droid">
+                            <param id="0" name="Object">shortrightwall</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" type="droid">
+                            <param id="0" name="Animation">&quot;brakeright&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="4" name="Set animation" type="droid">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On collision with another object" type="droid">
+                            <param id="0" name="Object">shortleftwall</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" type="droid">
+                            <param id="0" name="Animation">&quot;brakeleft&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="4" name="Set animation" type="droid">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>When player picks up Jetpack, change HUD to have Jetpack and toggle jetpack power to true, and set jetpack time.</comment>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="Collisions that are useful to Player" title="Useful Collisions">
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On collision with another object" type="droid">
+                            <param id="0" name="Object">jetpack</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Set scale" type="jetpack">
+                            <param id="0" name="Scale">1.5</param>
+                        </action>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="-9" name="Destroy" type="jetpack" />
+                        <action id="4" name="Set animation" type="special">
+                            <param id="0" name="Animation">&quot;powerjetpack&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-14" name="Toggle boolean" type="droid">
+                            <param id="0" name="Instance variable">power_jetpack</param>
+                        </action>
+                        <action id="-10" name="Set value" type="droid">
+                            <param id="0" name="Instance variable">power_jetpack_time</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Check if JetPack power is active and if time is left.. then allow 8 direction movement</comment>
+                        <event-block>
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" type="droid">
+                                    <param id="0" name="Instance variable">power_jetpack</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" type="droid">
+                                    <param id="0" name="Instance variable">power_jetpack_time</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" type="System">
+                                            <param id="0" name="Interval (seconds)">1.0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" type="droid">
+                                            <param id="0" name="Instance variable">power_jetpack_time</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" type="droid">
+                                            <param id="0" name="Instance variable">power_jetpack_time</param>
+                                            <param id="1" name="Value">droid.power_jetpack_time-1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

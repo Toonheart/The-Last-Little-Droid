@@ -416,6 +416,8 @@
                     <instance-variables>
                         <fx>0</fx>
                         <fy>0</fy>
+                        <power_jetpack>false</power_jetpack>
+                        <power_jetpack_time>0</power_jetpack_time>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="BoundToLayout">
@@ -436,6 +438,26 @@
                         <hotspotX>0.467780441</hotspotX>
                         <hotspotY>0.995384634</hotspotY>
                         <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="jetpack">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-frame>0</initial-frame>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1346</x>
+                        <y>605</y>
+                        <z>0</z>
+                        <width>103.184303284</width>
+                        <height>103.184303284</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0.010497843</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
