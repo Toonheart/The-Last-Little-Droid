@@ -349,16 +349,7 @@
                             <param id="0" name="Interval (seconds)">1.0</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="3" name="Update watch variable" type="DebugPanel">
-                            <param id="0" name="Name">&quot;JetPack Enable&quot;</param>
-                            <param id="1" name="Value">droid.power_jetpack</param>
-                        </action>
-                        <action id="3" name="Update watch variable" type="DebugPanel">
-                            <param id="0" name="Name">&quot;Jetpack remaining Time&quot;</param>
-                            <param id="1" name="Value">droid.power_jetpack_time</param>
-                        </action>
-                    </actions>
+                    <actions />
                 </event-block>
             </sub-events>
         </event-group>
