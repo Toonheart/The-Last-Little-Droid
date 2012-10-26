@@ -4,6 +4,7 @@
     <name>Stage1-Events</name>
     <events>
         <comment>Global Variables - Don&apos;t mess with them!</comment>
+        <variable comment="Counts the touch and gets resetted every half second to detect double touch for Jump." constant="0" name="touch_count" static="0" type="number">0</variable>
         <variable comment="This value moves the movable blocks in X and Y axis" constant="0" name="movingblocks_direction" static="0" type="number">1</variable>
         <comment>Includes</comment>
         <include>Fades in-out</include>
@@ -64,7 +65,8 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block>
+                <comment>Every Second, check for Jetpack time and decrement it. Disable 8 direction if Jetpack time is finished</comment>
+                <event-block collapsed="1">
                     <conditions>
                         <condition id="-6" name="Every X seconds" type="System">
                             <param id="0" name="Interval (seconds)">1.0</param>
@@ -106,10 +108,41 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>Playing with touch_count to detect double touch</comment>
+                <event-block>
+                    <conditions>
+                        <condition id="1" name="On any touch end" type="Touch" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" type="System">
+                            <param id="0" name="Variable">touch_count</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" type="System">
+                            <param id="0" name="Interval (seconds)">0.5</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" type="System">
+                            <param id="0" name="Variable">touch_count</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">touch_count</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" title="UserControl">
             <sub-events>
+                <comment>Player Left and Right Controls, both via Keyboard and Touch</comment>
                 <event-block any="1">
                     <conditions>
                         <condition id="2" name="Key is down" type="Keyboard">
@@ -149,18 +182,10 @@
                     </actions>
                 </event-block>
                 <event-block>
-                    <conditions>
-                        <condition id="4" name="Is touching object" type="Touch">
-                            <param id="0" name="Object">jump</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="Platform" id="7" name="Simulate control" type="droidbox">
-                            <param id="0" name="Control">2</param>
-                        </action>
-                    </actions>
+                    <conditions />
+                    <actions />
                 </event-block>
-                <comment>Check if JetPack power is active and if time is left.. then allow 8 direction movement</comment>
+                <comment>Player Controls for Flying when Jetpack is used</comment>
                 <event-block>
                     <conditions>
                         <condition id="3" name="On touched object" type="Touch">
@@ -183,6 +208,7 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Game Restart Control</comment>
                 <event-block>
                     <conditions>
                         <condition id="0" name="On key pressed" type="Keyboard">
@@ -191,6 +217,24 @@
                     </conditions>
                     <actions>
                         <action id="-26" name="Restart layout" type="System" />
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-14" name="Compare variable" type="System">
+                            <param id="0" name="Variable">touch_count</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" type="droidbox">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">touch_count</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
