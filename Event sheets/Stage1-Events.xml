@@ -4,7 +4,7 @@
     <name>Stage1-Events</name>
     <events>
         <comment>Global Variables - Don&apos;t mess with them!</comment>
-        <variable comment="This value moves the movable blocks in X and Y axis" name="movingblocks_direction" type="number">1</variable>
+        <variable comment="This value moves the movable blocks in X and Y axis" constant="0" name="movingblocks_direction" static="0" type="number">1</variable>
         <comment>Includes</comment>
         <include>Fades in-out</include>
         <event-group description="" title="System">
@@ -322,13 +322,6 @@
                         <action id="9" name="Set scale" type="jetpack">
                             <param id="0" name="Scale">1.25</param>
                         </action>
-                        <action id="-3" name="Set position" type="jetpack">
-                            <param id="0" name="X">jetpack.X+100</param>
-                            <param id="1" name="Y">jetpack.Y+100</param>
-                        </action>
-                        <action id="-16" name="Wait" type="System">
-                            <param id="0" name="Seconds">0.5</param>
-                        </action>
                         <action id="-9" name="Destroy" type="jetpack" />
                         <action id="4" name="Set animation" type="special">
                             <param id="0" name="Animation">&quot;powerjetpack&quot;</param>
@@ -349,7 +342,16 @@
                             <param id="0" name="Interval (seconds)">1.0</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="3" name="Update watch variable" type="DebugPanel">
+                            <param id="0" name="Name">&quot;Droid JetPack Enable&quot;</param>
+                            <param id="1" name="Value">droid.power_jetpack</param>
+                        </action>
+                        <action id="3" name="Update watch variable" type="DebugPanel">
+                            <param id="0" name="Name">&quot;Droid Jetpack TimeOut&quot;</param>
+                            <param id="1" name="Value">droid.power_jetpack_time</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

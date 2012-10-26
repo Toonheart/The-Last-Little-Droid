@@ -5,8 +5,9 @@
     <version>0.1</version>
     <author>Srikrishna Das (Krish) - krish@toonheart.com</author>
     <unique-id>27i3rv8wgpwd5</unique-id>
-    <saved-with-version>10302</saved-with-version>
+    <saved-with-version>10802</saved-with-version>
     <used-plugins>
+        <plugin author="" id="Rex_DebugPanel" version="0.100000001">Debug Panel</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
@@ -527,6 +528,9 @@
                     </frame>
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type global="1" name="DebugPanel">
+            <plugin id="Rex_DebugPanel" />
         </object-type>
     </object-folder>
     <families />
