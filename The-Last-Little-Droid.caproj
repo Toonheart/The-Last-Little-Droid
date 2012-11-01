@@ -9,7 +9,6 @@
     <used-plugins>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
-        <plugin author="" id="Rex_DebugPanel" version="0.100000001">Debug Panel</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
@@ -508,9 +507,6 @@
                     </frame>
                 </animation>
             </animation-folder>
-        </object-type>
-        <object-type global="1" name="DebugPanel">
-            <plugin id="Rex_DebugPanel" />
         </object-type>
         <object-type name="stage1minion1">
             <plugin id="Sprite" />

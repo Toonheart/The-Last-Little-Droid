@@ -8,7 +8,7 @@
         <variable comment="This value moves the movable blocks in X and Y axis" constant="0" name="movingblocks_direction" static="0" type="number">1</variable>
         <comment>Includes</comment>
         <include>Fades in-out</include>
-        <event-group collapsed="1" description="" title="System">
+        <event-group description="" title="System">
             <sub-events>
                 <event-block>
                     <conditions>
@@ -140,7 +140,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" title="UserControl">
+        <event-group description="" title="UserControl">
             <sub-events>
                 <comment>Player Left and Right Controls, both via Keyboard and Touch</comment>
                 <event-block any="1">
@@ -191,7 +191,7 @@
                         <condition id="3" name="On touched object" type="Touch">
                             <param id="0" name="Object">special</param>
                         </condition>
-                        <condition disabled="1" id="-8" name="Is boolean instance variable set" type="droid">
+                        <condition id="-8" name="Is boolean instance variable set" type="droid">
                             <param id="0" name="Instance variable">power_jetpack</param>
                         </condition>
                     </conditions>
@@ -206,17 +206,6 @@
                         <action behavior="Platform" id="11" name="Set enabled" type="droidbox">
                             <param id="0" name="State">0</param>
                         </action>
-                    </actions>
-                </event-block>
-                <comment>Game Restart Control</comment>
-                <event-block>
-                    <conditions>
-                        <condition id="0" name="On key pressed" type="Keyboard">
-                            <param id="0" name="Key">27 (Esc)</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-26" name="Restart layout" type="System" />
                     </actions>
                 </event-block>
                 <event-block>
@@ -237,9 +226,20 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Game Restart Control</comment>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On key pressed" type="Keyboard">
+                            <param id="0" name="Key">27 (Esc)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" type="System" />
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group description="All platform behaviors go here." title="Platform Behaviors">
+        <event-group collapsed="1" description="All platform behaviors go here." title="Platform Behaviors">
             <sub-events>
                 <comment>Platform behavior for Droid</comment>
                 <event-block>
@@ -300,8 +300,8 @@
                         <condition behavior="Platform" id="2" name="Is on floor" type="stage1minion1" />
                     </conditions>
                     <actions>
-                        <action id="6" name="Set speed" type="stage1minion1">
-                            <param id="0" name="Speed">200</param>
+                        <action behavior="Platform" id="1" name="Set max speed" type="stage1minion1">
+                            <param id="0" name="Max Speed">100</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -346,8 +346,8 @@
                         <condition behavior="Platform" id="2" inverted="1" name="Is on floor" type="stage1minion1" />
                     </conditions>
                     <actions>
-                        <action id="6" name="Set speed" type="stage1minion1">
-                            <param id="0" name="Speed">100</param>
+                        <action behavior="Platform" id="1" name="Set max speed" type="stage1minion1">
+                            <param id="0" name="Max Speed">50</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -389,7 +389,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Collisions that will cause problems to player or change in gameplay" title="Gameplay Collisions">
+        <event-group collapsed="1" description="Collisions that will cause problems to player or change in gameplay" title="Gameplay Collisions">
             <sub-events>
                 <comment>Collision for Player</comment>
                 <event-block>
@@ -461,7 +461,7 @@
                     </actions>
                 </event-block>
                 <comment>Collision for Minions</comment>
-                <event-block>
+                <event-block collapsed="1">
                     <conditions>
                         <condition id="0" name="On collision with another object" type="stage1minion1">
                             <param id="0" name="Object">containment</param>
@@ -489,7 +489,7 @@
                                     <param id="1" name="Value">&quot;left&quot;</param>
                                 </action>
                                 <action behavior="Platform" id="1" name="Set max speed" type="stage1minion1">
-                                    <param id="0" name="Max Speed">200</param>
+                                    <param id="0" name="Max Speed">100</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -509,7 +509,7 @@
                                     <param id="1" name="Value">&quot;right&quot;</param>
                                 </action>
                                 <action behavior="Platform" id="1" name="Set max speed" type="stage1minion1">
-                                    <param id="0" name="Max Speed">200</param>
+                                    <param id="0" name="Max Speed">100</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -550,12 +550,7 @@
                             <param id="0" name="Interval (seconds)">1.0</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="3" name="Update watch variable" type="DebugPanel">
-                            <param id="0" name="Name">&quot;Minion Action Variable&quot;</param>
-                            <param id="1" name="Value">stage1minion1.action</param>
-                        </action>
-                    </actions>
+                    <actions />
                 </event-block>
             </sub-events>
         </event-group>
