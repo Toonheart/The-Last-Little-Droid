@@ -7,15 +7,16 @@
     <unique-id>27i3rv8wgpwd5</unique-id>
     <saved-with-version>10802</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
-        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
-        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
-        <plugin author="" id="Rex_DebugPanel" version="0.100000001">Debug Panel</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="" id="Rex_DebugPanel" version="0.100000001">Debug Panel</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
@@ -62,6 +63,9 @@
             <behaviors>
                 <behavior-type name="BoundToLayout">
                     <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="Flash">
+                    <behavior id="Flash" />
                 </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
@@ -507,6 +511,55 @@
         </object-type>
         <object-type global="1" name="DebugPanel">
             <plugin id="Rex_DebugPanel" />
+        </object-type>
+        <object-type name="stage1minion1">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Determines simple action AI of enemies or minions " name="action" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="BoundToLayout">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="Platform">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0.571429" hotspotY="0.923395">
+                        <collision-poly>
+                            <point x="0.163866" y="0.202898" />
+                            <point x="0.5" y="0.010352" />
+                            <point x="0.907563" y="0.00828157" />
+                            <point x="0.97479" y="0.63147" />
+                            <point x="0.506303" y="0.513458" />
+                            <point x="0.609244" y="0.89648" />
+                            <point x="0.0315126" y="0.968944" />
+                            <point x="0.121848" y="0.507247" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="containment">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0.7" hotspotY="0.504274">
+                        <collision-poly>
+                            <point x="0.127273" y="0.393162" />
+                            <point x="0.7" y="0.102564" />
+                            <point x="0.945455" y="0.700855" />
+                            <point x="0.945455" y="0.504274" />
+                            <point x="0.890909" y="0.25641" />
+                            <point x="0.7" y="0.854701" />
+                            <point x="0.0545455" y="0.683761" />
+                            <point x="0.0727273" y="0.504274" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
