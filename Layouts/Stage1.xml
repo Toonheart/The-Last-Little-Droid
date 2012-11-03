@@ -28,7 +28,7 @@
             <instances>
                 <instance type="containment">
                     <properties>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <initial-frame>0</initial-frame>
                     </properties>
                     <blend-mode>0</blend-mode>
@@ -48,7 +48,7 @@
                 </instance>
                 <instance type="containment">
                     <properties>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <initial-frame>0</initial-frame>
                     </properties>
                     <blend-mode>0</blend-mode>
@@ -68,7 +68,7 @@
                 </instance>
                 <instance type="containment">
                     <properties>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <initial-frame>0</initial-frame>
                     </properties>
                     <blend-mode>0</blend-mode>
@@ -88,7 +88,7 @@
                 </instance>
                 <instance type="containment">
                     <properties>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <initial-frame>0</initial-frame>
                     </properties>
                     <blend-mode>0</blend-mode>
@@ -623,90 +623,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1355</x>
-                        <y>1311</y>
-                        <z>0</z>
-                        <width>109.181930542</width>
-                        <height>110.787559509</height>
-                        <depth>0</depth>
-                        <hotspotX>0.571428597</hotspotX>
-                        <hotspotY>0.923395455</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="stage1minion1">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-frame>0</initial-frame>
-                    </properties>
-                    <instance-variables>
-                        <action>right</action>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="BoundToLayout">
-                            <properties>
-                                <bound-by>Edge</bound-by>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="Platform">
-                            <properties>
-                                <max-speed>200</max-speed>
-                                <acceleration>750</acceleration>
-                                <deceleration>750</deceleration>
-                                <jump-strength>650</jump-strength>
-                                <gravity>1500</gravity>
-                                <max-fall-speed>500</max-fall-speed>
-                                <default-controls>No</default-controls>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
                         <x>1230</x>
                         <y>878</y>
-                        <z>0</z>
-                        <width>109.181930542</width>
-                        <height>110.787559509</height>
-                        <depth>0</depth>
-                        <hotspotX>0.571428597</hotspotX>
-                        <hotspotY>0.923395455</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="stage1minion1">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-frame>0</initial-frame>
-                    </properties>
-                    <instance-variables>
-                        <action>right</action>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="BoundToLayout">
-                            <properties>
-                                <bound-by>Edge</bound-by>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="Platform">
-                            <properties>
-                                <max-speed>200</max-speed>
-                                <acceleration>750</acceleration>
-                                <deceleration>750</deceleration>
-                                <jump-strength>650</jump-strength>
-                                <gravity>1500</gravity>
-                                <max-fall-speed>500</max-fall-speed>
-                                <default-controls>No</default-controls>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>472</x>
-                        <y>608</y>
                         <z>0</z>
                         <width>109.181930542</width>
                         <height>110.787559509</height>
