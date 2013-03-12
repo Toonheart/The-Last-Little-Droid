@@ -5,7 +5,7 @@
     <version>0.2</version>
     <author>Srikrishna Das (Krish) - krish@toonheart.com</author>
     <unique-id>27i3rv8wgpwd5</unique-id>
-    <saved-with-version>10802</saved-with-version>
+    <saved-with-version>11900</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
@@ -22,14 +22,15 @@
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+        <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>512</width>
-        <height>384</height>
+        <width>1024</width>
+        <height>768</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <first-layout>Stage1</first-layout>
@@ -37,7 +38,7 @@
     <configuration-settings>
         <prop name="Clear background">No</prop>
         <prop name="Enable WebGL">On</prop>
-        <prop name="Fullscreen in browser">Scale</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
         <prop name="Preview browser">(default)</prop>
         <prop name="Preview mode">HTTP</prop>
@@ -60,9 +61,6 @@
                 <instance-variable comment="Seconds left for Jetpack to lose fuel." name="power_jetpack_time" type="number" />
             </instance-variables>
             <behaviors>
-                <behavior-type name="BoundToLayout">
-                    <behavior id="bound" />
-                </behavior-type>
                 <behavior-type name="Flash">
                     <behavior id="Flash" />
                 </behavior-type>
@@ -393,11 +391,11 @@
                 <behavior-type name="ScrollTo">
                     <behavior id="scrollto" />
                 </behavior-type>
-                <behavior-type name="BoundToLayout">
-                    <behavior id="bound" />
-                </behavior-type>
                 <behavior-type name="8Direction">
                     <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Wrap">
+                    <behavior id="wrap" />
                 </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
@@ -472,7 +470,7 @@
             </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.804688" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -485,7 +483,7 @@
             </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
-                    <frame duration="1" hotspotX="0.484375" hotspotY="0.809896" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -552,6 +550,26 @@
                             <point x="0.7" y="0.854701" />
                             <point x="0.0545455" y="0.683761" />
                             <point x="0.0727273" y="0.504274" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="jumpButton">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Anchor">
+                    <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0">
+                        <collision-poly>
+                            <point x="0.992188" y="0" />
+                            <point x="0.992188" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
                         </collision-poly>
                     </frame>
                 </animation>
